@@ -9,3 +9,4 @@ Table:
 | 07.07.2023 | Brainstorming and initialize project | 2 |
 | 07.07.2023 | Setting up database | 2 |
 | 07.07.2023 | Authentication and authorization | 6 |
+| 10.07.2023 | User routes | 4 |

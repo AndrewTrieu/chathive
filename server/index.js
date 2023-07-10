@@ -8,9 +8,15 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+/* Routes */
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
+import postRoutes from "./routes/post.js";
 /* Controllers */
 import { register } from "./controllers/auth.js";
+import { createPost } from "./controllers/post.js";
+/* Middlewares */
+import { verifyToken } from "./middlewares/auth.js";
 
 /**
  * Config
@@ -45,6 +51,10 @@ const upload = multer({ storage });
  * Routes
  * */
 app.post("/auth/register", upload.single("profilePicture"), register);
+app.post("/posts", verifyToken, upload.single("image"), createPost);
+app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 /**
  * Database
