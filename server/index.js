@@ -17,6 +17,10 @@ import { register } from "./controllers/auth.js";
 import { createPost } from "./controllers/posts.js";
 /* Middlewares */
 import { verifyToken } from "./middlewares/auth.js";
+/* Models */
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { mockUsers, mockPosts } from "./data/mock.js";
 
 /**
  * Config
@@ -65,7 +69,11 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() =>
-    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
-  )
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+
+    /* Inject mock data - DO NOT USE IN PRODUCTION */
+    // User.insertMany(mockUsers).then(() => console.log("Mock users injected"));
+    // Post.insertMany(mockPosts).then(() => console.log("Mock posts injected"));
+  })
   .catch((error) => console.log(error.message));

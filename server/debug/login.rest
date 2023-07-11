@@ -1,0 +1,6 @@
+POST localhost:3001/auth/login
+
+{
+    "email": "admin@chathive.com",
+    "password": "admin"
+}

@@ -1,0 +1,2 @@
+GET localhost:3001/users/64ada0c35fcbbf6b8c24dfd2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWRhMGMzNWZjYmJmNmI4YzI0ZGZkMSIsImFkbWluIjp0cnVlLCJpYXQiOjE2ODkxMDIwNzF9.YmbSFv4q6sTRqw0bvxQN-dBiKElEY8NcGeIKqu6B0lw
