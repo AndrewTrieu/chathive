@@ -10,11 +10,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 /* Routes */
 import authRoutes from "./routes/auth.js";
-import userRoutes from "./routes/user.js";
-import postRoutes from "./routes/post.js";
+import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js";
 /* Controllers */
 import { register } from "./controllers/auth.js";
-import { createPost } from "./controllers/post.js";
+import { createPost } from "./controllers/posts.js";
 /* Middlewares */
 import { verifyToken } from "./middlewares/auth.js";
 
@@ -51,7 +51,7 @@ const upload = multer({ storage });
  * Routes
  * */
 app.post("/auth/register", upload.single("profilePicture"), register);
-app.post("/posts", verifyToken, upload.single("image"), createPost);
+app.post("/posts", verifyToken, upload.single("contentPicture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);

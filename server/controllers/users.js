@@ -5,8 +5,8 @@ import User from "../models/User";
  */
 export const getUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findById(id);
+    const { userId } = req.params;
+    const user = await User.findById(userId);
 
     res.status(200).json(user);
   } catch (error) {
@@ -16,8 +16,8 @@ export const getUser = async (req, res) => {
 
 export const getFriends = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findById(id);
+    const { userId } = req.params;
+    const user = await User.findById(userId);
     const friends = await Promise.all(
       user.friends.map((id) => User.findById(id))
     );
@@ -54,8 +54,8 @@ export const getFriends = async (req, res) => {
  */
 export const patchFriend = async (req, res) => {
   try {
-    const { id, friendId } = req.params;
-    const user = await User.findById(id);
+    const { userId, friendId } = req.params;
+    const user = await User.findById(userId);
     const friend = await User.findById(friendId);
 
     if (user.friends.includes(friendId)) {

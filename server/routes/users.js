@@ -7,12 +7,12 @@ const router = express.Router();
 /**
  * Read - GET
  */
-router.get("/:id", verifyToken, getUser);
-router.get("/:id/friends", verifyToken, getFriends);
+router.get("/:userId", verifyToken, getUser);
+router.get("/:userId/friends", verifyToken, getFriends);
 
 /**
  * Update - PATCH
  */
-router.patch("/:id/:friendId", verifyToken, patchFriend);
+router.patch("/:userId/:friendId", verifyToken, patchFriend);
 
 export default router;

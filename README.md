@@ -10,3 +10,5 @@ Table:
 | 07.07.2023 | Setting up database | 2 |
 | 07.07.2023 | Authentication and authorization | 6 |
 | 10.07.2023 | User routes | 4 |
+| 11.07.2023 | Post routes | 6 |
+
