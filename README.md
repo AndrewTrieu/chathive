@@ -13,4 +13,5 @@ Table:
 | 11.07.2023 | Post routes | 6 |
 | 11.07.2023 | Add mock data + Fix package.json not pushed | 2 |
 | 11.07.2023 | Add REST requests | 1 |
+| 12.07.2023 | Add mock assets and initialize frontend | 3 |
 
