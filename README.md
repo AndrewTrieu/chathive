@@ -16,3 +16,4 @@ Table:
 | 12.07.2023 | Add mock assets and initialize frontend | 3 |
 | 13.07.2023 | Setup frontend | 6 |
 | 13.07.2023 | Theme and styling | 10 |
+| 14.07.2023 | Navbar | 10 |
