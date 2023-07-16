@@ -17,3 +17,4 @@ Table:
 | 13.07.2023 | Setup frontend | 6 |
 | 13.07.2023 | Theme and styling | 10 |
 | 14.07.2023 | Navbar | 10 |
+| 16.07.2023 | Login and register page | 20 |
