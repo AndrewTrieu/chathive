@@ -205,7 +205,7 @@ export const mockPosts = [
     firstName: "Aake",
     lastName: "Haahpala",
     location: "Helsinki, Finland",
-    description: "Just moved!",
+    content: "Just moved!",
     contentPicturePath: "post1.jpeg",
     profilePicturePath: "p1.jpeg",
     likes: new Map([
@@ -222,7 +222,7 @@ export const mockPosts = [
     firstName: "Eevert",
     lastName: "Kotilainen",
     location: "Kainuu, Finland",
-    description:
+    content:
       "Summer is coming! I am so excited to go to the cottage and enjoy the nature.",
     contentPicturePath: "post2.jpeg",
     profilePicturePath: "p3.jpeg",
@@ -245,7 +245,7 @@ export const mockPosts = [
     firstName: "Taina",
     lastName: "Ruotsalainen",
     location: "Berlin, Germany",
-    description:
+    content:
       "International conference in Berlin! I am so excited to meet new people and learn new things.",
     contentPicturePath: "post3.jpeg",
     profilePicturePath: "p5.jpeg",
@@ -268,7 +268,7 @@ export const mockPosts = [
     firstName: "Elisa",
     lastName: "Järvelä",
     location: "Riihimäki, Finland",
-    description:
+    content:
       "Taking care of my garden. I am so excited to see the flowers bloom!",
     contentPicturePath: "post4.jpeg",
     profilePicturePath: "p7.jpeg",
@@ -291,7 +291,7 @@ export const mockPosts = [
     firstName: "Johanna",
     lastName: "Mäkinen",
     location: "Haparanda, Sweden",
-    description:
+    content:
       "A trip to neighboring Sweden! I am so excited to try some meatballs!",
     contentPicturePath: "post5.jpeg",
     profilePicturePath: "p9.jpeg",
@@ -314,7 +314,7 @@ export const mockPosts = [
     firstName: "Mikko",
     lastName: "Koivu",
     location: "Mikkeli, Finland",
-    description:
+    content:
       "Student excursion to Mikkeli! I am so excited to make new friends and drink some beer!",
     contentPicturePath: "post6.jpeg",
     profilePicturePath: "p11.jpeg",
