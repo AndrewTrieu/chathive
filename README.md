@@ -21,3 +21,4 @@ Table:
 | 16.07.2023 | Fix mock schema and move mock injections out of index.js | 1 |
 | 18.07.2023 | Home page and navigate to login/register page if not logged in | 20 |
 | 19.07.2023 | Post widget | 10 |
+| 21.07.2023 | Each post on home page | 20 |
