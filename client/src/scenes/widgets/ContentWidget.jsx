@@ -6,7 +6,7 @@ import {
 } from "@mui/icons-material";
 import { Box, Divider, Typography, IconButton, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
-import Friend from "components/FriendList";
+import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

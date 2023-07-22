@@ -22,3 +22,4 @@ Table:
 | 18.07.2023 | Home page and navigate to login/register page if not logged in | 20 |
 | 19.07.2023 | Post widget | 10 |
 | 21.07.2023 | Each post on home page | 20 |
+| 22.07.2023 | Ads and friend list | 10 |

@@ -4,6 +4,8 @@ import Navbar from "scenes/navbar";
 import UserWidget from "scenes/widgets/UserWidget";
 import PostWidget from "scenes/widgets/PostWidget";
 import FeedWidget from "scenes/widgets/FeedWidget";
+import AdsWidget from "scenes/widgets/AdsWidget";
+import FriendList from "scenes/widgets/FriendList";
 
 const HomePage = () => {
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
@@ -29,7 +31,13 @@ const HomePage = () => {
           <PostWidget profilePicturePath={profilePicturePath} />
           <FeedWidget userId={_id} />
         </Box>
-        {isNotMobile && <Box flexBasis="26%"></Box>}
+        {isNotMobile && (
+          <Box flexBasis="26%">
+            <AdsWidget />
+            <Box mt="2rem 0" />
+            <FriendList userId={_id} />
+          </Box>
+        )}
       </Box>
     </Box>
   );
