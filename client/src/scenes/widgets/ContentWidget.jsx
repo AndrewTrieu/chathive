@@ -12,6 +12,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const ContentWidget = ({
   postId,
   userId,
@@ -34,7 +36,7 @@ const ContentWidget = ({
   const main = palette.neutral.main;
 
   const handleLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+    const response = await fetch(`${baseUrl}/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -63,7 +65,7 @@ const ContentWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${contentPicturePath}`}
+          src={`${baseUrl}/assets/${contentPicturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">

@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import ContentWidget from "./ContentWidget";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const FeedWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
-    const response = await fetch(`http://localhost:3001/posts`, {
+    const response = await fetch(`${baseUrl}/posts`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -20,7 +22,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
   };
 
   const getUserPosts = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${userId}`, {
+    const response = await fetch(`${baseUrl}/posts/${userId}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

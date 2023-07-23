@@ -8,6 +8,8 @@ import PostWidget from "scenes/widgets/PostWidget";
 import FeedWidget from "scenes/widgets/FeedWidget";
 import UserWidget from "scenes/widgets/UserWidget";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const { userId } = useParams();
@@ -15,7 +17,7 @@ const ProfilePage = () => {
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
+    const response = await fetch(`${baseUrl}/users/${userId}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

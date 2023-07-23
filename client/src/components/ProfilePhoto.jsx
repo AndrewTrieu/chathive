@@ -1,5 +1,7 @@
 import { Box } from "@mui/material";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const ProfilePhoto = ({ image, size = "60px" }) => {
   return (
     <Box width={size} height={size}>
@@ -11,7 +13,7 @@ const ProfilePhoto = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="profile"
-        src={`http://localhost:3001/assets/${image}`}
+        src={`${baseUrl}/assets/${image}`}
       />
     </Box>
   );

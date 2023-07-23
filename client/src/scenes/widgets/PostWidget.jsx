@@ -25,6 +25,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const PostWidget = ({ profilePicturePath }) => {
   const dispatch = useDispatch();
   const [isImageDropzoneOpen, setIsImageDropzoneOpen] = useState(false);
@@ -46,7 +48,7 @@ const PostWidget = ({ profilePicturePath }) => {
       formData.append("contentPicturePath", image.name);
     }
 
-    const response = await fetch(`http://localhost:3001/posts`, {
+    const response = await fetch(`${baseUrl}/posts`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

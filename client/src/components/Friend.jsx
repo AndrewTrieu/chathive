@@ -6,6 +6,8 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import ProfilePhoto from "./ProfilePhoto";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const Friend = ({ friendId, userName, subtitle, profilePicturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,16 +23,13 @@ const Friend = ({ friendId, userName, subtitle, profilePicturePath }) => {
   const isFriend = friends.find((friend) => friend._id === friendId);
 
   const handleFriend = async () => {
-    const response = await fetch(
-      `http:/localhost:3001/users/${_id}/${friendId}`,
-      {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${baseUrl}/users/${_id}/${friendId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     dispatch(setFriends({ friends: data }));
   };

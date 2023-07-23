@@ -16,6 +16,8 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("First name is required"),
   lastName: yup.string().required("Last name is required"),
@@ -62,13 +64,10 @@ const Form = () => {
     }
     formData.append("profilePicturePath", values.profilePicture.name);
 
-    const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const savedUserResponse = await fetch(`${baseUrl}/auth/register`, {
+      method: "POST",
+      body: formData,
+    });
 
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
@@ -79,14 +78,11 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInUserResponse = await fetch(
-      "http://localhost:3001/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      }
-    );
+    const loggedInUserResponse = await fetch(`${baseUrl}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
 
     const loggedInUser = await loggedInUserResponse.json();
     onSubmitProps.resetForm();
