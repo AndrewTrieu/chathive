@@ -8,7 +8,7 @@ import PostWidget from "scenes/widgets/PostWidget";
 import FeedWidget from "scenes/widgets/FeedWidget";
 import UserWidget from "scenes/widgets/UserWidget";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null);

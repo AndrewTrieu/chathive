@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const FriendList = ({ userId }) => {
   const dispatch = useDispatch();
@@ -36,18 +36,20 @@ const FriendList = ({ userId }) => {
         fontWeight="500"
         sx={{ mb: "1.5rem" }}
       >
-        Great minds you know
+        Connected great minds
       </Typography>
       <Box display="flex" flexDirection="column" gap="1.5rem">
-        {friends.map((friend) => (
-          <Friend
-            key={friend._id}
-            friendId={friend._id}
-            userName={`${friend.firstName} ${friend.lastName}`}
-            subtitle={friend.location}
-            profilePicturePath={friend.profilePicturePath}
-          />
-        ))}
+        {friends &&
+          friends.length > 0 &&
+          friends.map((friend) => (
+            <Friend
+              key={friend._id}
+              friendId={friend._id}
+              userName={`${friend.firstName} ${friend.lastName}`}
+              subtitle={friend.location}
+              profilePicturePath={friend.profilePicturePath}
+            />
+          ))}
       </Box>
     </WidgetWrapper>
   );

@@ -24,3 +24,5 @@ Table:
 | 21.07.2023 | Each post on home page | 20 |
 | 22.07.2023 | Ads and friend list | 10 |
 | 23.07.2023 | Profile page | 5 |
+| 24.07.2023 | Testing and debugging | 3 |
+

@@ -3,6 +3,9 @@ import {
   EditOutlined,
   LocationOnOutlined,
   FavoriteOutlined,
+  FacebookOutlined,
+  Instagram,
+  LinkedIn,
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import ProfilePhoto from "components/ProfilePhoto";
@@ -12,7 +15,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const UserWidget = ({ userId, profilePicturePath }) => {
   const [user, setUser] = useState(null);
@@ -64,7 +67,7 @@ const UserWidget = ({ userId, profilePicturePath }) => {
               {firstName} {lastName}
             </Typography>
             <Typography color={medium}>
-              {friends.length} friend&#40;s&#41;
+              {friends && friends.length} friend&#40;s&#41;
             </Typography>
           </Box>
         </FlexBetween>
@@ -89,7 +92,7 @@ const UserWidget = ({ userId, profilePicturePath }) => {
         </Typography>
         <FlexBetween gap="1rem" mb="0.5rem">
           <FlexBetween gap="1rem">
-            <img src="../../public/assets/icons/facebook.svg" alt="facebook" />
+            <FacebookOutlined fontSize="large" sx={{ color: main }} />
             <Box>
               <Typography color={main} fontWeight="500">
                 Facebook
@@ -101,10 +104,7 @@ const UserWidget = ({ userId, profilePicturePath }) => {
         </FlexBetween>
         <FlexBetween gap="1rem">
           <FlexBetween gap="1rem">
-            <img
-              src="../../public/assets/icons/instagram.svg"
-              alt="instagram"
-            />
+            <Instagram fontSize="large" sx={{ color: main }} />
             <Box>
               <Typography color={main} fontWeight="500">
                 Instagram
@@ -116,7 +116,7 @@ const UserWidget = ({ userId, profilePicturePath }) => {
         </FlexBetween>
         <FlexBetween gap="1rem">
           <FlexBetween gap="1rem">
-            <img src="../../public/assets/icons/linkedin.svg" alt="linkedin" />
+            <LinkedIn fontSize="large" sx={{ color: main }} />
             <Box>
               <Typography color={main} fontWeight="500">
                 LinkedIn

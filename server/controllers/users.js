@@ -55,6 +55,9 @@ export const getFriends = async (req, res) => {
 export const patchFriend = async (req, res) => {
   try {
     const { userId, friendId } = req.params;
+    if (userId === friendId) {
+      return res.status(400).json({ error: "You cannot add yourself" });
+    }
     const user = await User.findById(userId);
     const friend = await User.findById(friendId);
 
@@ -63,7 +66,7 @@ export const patchFriend = async (req, res) => {
       friend.friends = friend.friends.filter((id) => id !== id);
     } else {
       user.friends.push(friendId);
-      friend.friends.push(id);
+      friend.friends.push(userId);
     }
 
     await user.save();

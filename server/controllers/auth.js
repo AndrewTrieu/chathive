@@ -71,12 +71,12 @@ export const login = async (req, res) => {
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) return res.status(400).json({ msg: "Wrong password" });
 
-    const accessToken = jwt.sign(
+    const token = jwt.sign(
       { id: user._id, admin: user.admin },
       process.env.JWT_SECRET
     );
     delete user.password;
-    res.status(200).json({ accessToken, user });
+    res.status(200).json({ token, user });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

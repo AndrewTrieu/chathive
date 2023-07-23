@@ -29,7 +29,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user);
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();

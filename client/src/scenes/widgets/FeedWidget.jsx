@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import ContentWidget from "./ContentWidget";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const FeedWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
   useEffect(() => {
     isProfile ? getUserPosts() : getPosts();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
+  console.log(posts);
   return (
     <>
       {posts.map(

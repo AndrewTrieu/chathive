@@ -9,7 +9,7 @@ import FriendList from "scenes/widgets/FriendList";
 
 const HomePage = () => {
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
-  const { _id, profilePicturePath } = useSelector((state) => state.user);
+  const { _id, profilePicturePath } = useSelector((state) => state.user.user);
 
   return (
     <Box>

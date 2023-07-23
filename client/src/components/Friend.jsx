@@ -6,12 +6,12 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import ProfilePhoto from "./ProfilePhoto";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const Friend = ({ friendId, userName, subtitle, profilePicturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { _id } = useSelector((state) => state.user);
+  const userId = useSelector((state) => state.user.user._id);
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
   const { palette } = useTheme();
@@ -20,10 +20,12 @@ const Friend = ({ friendId, userName, subtitle, profilePicturePath }) => {
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
 
-  const isFriend = friends.find((friend) => friend._id === friendId);
+  if (!friends) return null;
+
+  const isFriend = friends.some((friend) => friend._id === friendId) || false;
 
   const handleFriend = async () => {
-    const response = await fetch(`${baseUrl}/users/${_id}/${friendId}`, {
+    const response = await fetch(`${baseUrl}/users/${userId}/${friendId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -10,9 +10,9 @@ import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state";
+import { setPost } from "state";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const ContentWidget = ({
   postId,
@@ -28,7 +28,7 @@ const ContentWidget = ({
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
-  const loggedInUserId = useSelector((state) => state.user._id);
+  const loggedInUserId = useSelector((state) => state.user.user._id);
   const isLiked = Boolean(likes[loggedInUserId]);
   const likesCount = Object.keys(likes).length;
   const { palette } = useTheme();
@@ -45,7 +45,7 @@ const ContentWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }),
     });
     const updatedPost = await response.json();
-    dispatch(setPosts({ post: updatedPost }));
+    dispatch(setPost({ post: updatedPost }));
   };
 
   return (

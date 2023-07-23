@@ -25,7 +25,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 const PostWidget = ({ profilePicturePath }) => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const PostWidget = ({ profilePicturePath }) => {
   const [image, setImage] = useState(null);
   const [post, setPost] = useState("");
   const { palette } = useTheme();
-  const { _id } = useSelector((state) => state.user);
+  const userId = useSelector((state) => state.user.user._id);
   const token = useSelector((state) => state.token);
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
   const mediumMain = palette.neutral.mediumMain;
@@ -41,7 +41,7 @@ const PostWidget = ({ profilePicturePath }) => {
 
   const handlePost = async () => {
     const formData = new FormData();
-    formData.append("userId", _id);
+    formData.append("userId", userId);
     formData.append("content", post);
     if (image) {
       formData.append("contentPicture", image);
