@@ -1,5 +1,48 @@
 # ChatHive - A social media platform using MERN stack
 
+## Description
+
+This is a social media platform built using MERN stack (MongoDB, Express, React, Node.js). It allows users to create posts, like posts, and add friends. Dark mode is also supported.
+
+## Live Deployment
+
+You can check out the live deployment [here](https://chathive-client.onrender.com/). The backend is deployed [here](https://chathive-server.onrender.com/).
+
+You can login with the following credentials:
+
+- Email: <fake.person@mail.com>
+- Password: nullnullnull
+
+## Run Locally
+
+- Clone the repository
+- Set up `.env` file in `server` directory with the following content:
+
+```bash
+MONGO_URL=<your_mongo_url>
+JWT_SECRET=<your_jwt_secret>
+PORT=3001
+```
+
+where `<your_mongo_url>` is the URL to your MongoDB database, and `<your_jwt_secret>` is the secret key for JWT.
+
+- Run `npm install` in both `client` and `server` directories
+- Run `npm start` in both `client` and `server` directories
+
+## Limitations
+
+The project is only for demonstration purpose, and several limitations are apparent:
+
+- Messages, notifications, and help button (accesible from navbar) are not implemented.
+- Sharing posts and adding comments are not implemented.
+- Images are hosted in the backend, and the frontend only displays the images available in the backend. Therefore, users cannot upload images.
+- Links to other social media platforms are not implemented.
+- Admin privileges are not implemented.
+- Styling is not perfect.
+- Search bar is not implemented.
+- Slow loading time due to the hosting of images in the backend.
+- Many more...
+
 ## Timeline
 
 Table:
@@ -25,4 +68,9 @@ Table:
 | 22.07.2023 | Ads and friend list | 10 |
 | 23.07.2023 | Profile page | 5 |
 | 24.07.2023 | Testing and debugging | 3 |
+| 24.07.2023 | Deploy on Render and README.md | 1 |
+| **Total** | | **142** |
 
+## References
+
+Based on [this tutorial](https://www.youtube.com/watch?v=K8YELRmUb5o).
