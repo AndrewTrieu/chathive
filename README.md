@@ -13,6 +13,8 @@ You can login with the following credentials:
 - Email: <fake.person@mail.com>
 - Password: nullnullnull
 
+**NOTE:** First login might take a while since the backend respond time is not great (free plan).
+
 ## Run Locally
 
 - Clone the repository
