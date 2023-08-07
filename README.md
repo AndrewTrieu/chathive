@@ -13,7 +13,7 @@ You can login with the following credentials:
 - Email: <fake.person@mail.com>
 - Password: nullnullnull
 
-**NOTE:** First login might take a while since the backend respond time is not great (free plan).
+**NOTE:** First login might take a while since the backend response time is not great (free plan). Please refresh the page and try again if it does not redirect after 10s.
 
 ## Run Locally
 
