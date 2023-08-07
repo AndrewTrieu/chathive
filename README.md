@@ -71,7 +71,8 @@ Table:
 | 23.07.2023 | Profile page | 5 |
 | 24.07.2023 | Testing and debugging | 3 |
 | 24.07.2023 | Deploy on Render and README.md | 1 |
-| **Total** | | **142** |
+| 07.08.2023 | Fix online deployment (add Render rewrite rules) | 1 | 
+| **Total** | | **143** |
 
 ## References
 
